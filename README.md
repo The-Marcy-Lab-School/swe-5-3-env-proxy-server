@@ -4,7 +4,7 @@ Deployment Link:
 
 In this assignment, you will be given a working Giphy Search React application (remember that assignment?). Then, you'll use Express as a middleman for API requests, allowing us to deploy the project while keeping the API key secure. 
 
-Refer to the associated [lecture notes](https://marcylabschool.gitbook.io/marcy-lab-school-docs/mod-8-backend/3-securing-api-keys-with-environment-variables) for support.
+Refer to the associated [lecture notes](https://marcylabschool.gitbook.io/marcy-lab-school-docs/mod-5-backend/3-securing-api-keys-with-environment-variables) for support.
 
 **Table of Contents**
 - [Setup](#setup)
