@@ -10,14 +10,14 @@ const express = require('express');
 //////////////////////////
 
 const port = 8080;
-const pathToDistFolder = path.join(__dirname, '../frontend/dist');
+const pathToFrontend = path.join(__dirname, '../frontend');
 const app = express();
 
 //////////////////////////
 // Middleware/Controllers
 //////////////////////////
 
-const serveStatic = express.static(pathToDistFolder);
+const serveStatic = express.static(pathToFrontend);
 
 app.use(serveStatic);
 

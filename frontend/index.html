@@ -1,20 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giphy Search</title>
+    <link rel="stylesheet" href="/src/style.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="src/main.jsx"></script>
+
+    <nav>
+      <div class="navbar-brand">Giphy Search</div>
+    </nav>
+
+    <main>
+      <form id="gif-search-form">
+        <label for="searchInput">Enter a Search Term</label>
+        <input type="text" id="searchInput" />
+        <button type="submit">Search</button>
+      </form>
+      <p id="error" class="hidden"></p>
+      <ul id="gif-list"></ul>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
