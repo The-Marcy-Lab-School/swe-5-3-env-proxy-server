@@ -8,15 +8,16 @@ Refer to the associated [GitBook Chapter (Environment Variables and Deployment)]
 
 **Table of Contents**
 - [Setup](#setup)
-  - [Starter Code](#starter-code)
-- [Grading](#grading)
-- [Server Side](#server-side)
-  - [Step 1 — Create an Endpoint and Controller](#step-1--create-an-endpoint-and-controller)
-  - [Step 2 — Create an Environment Variable for the API Key](#step-2--create-an-environment-variable-for-the-api-key)
-- [Client Side](#client-side)
-  - [Step 3 — Update the Frontend Application](#step-3--update-the-frontend-application)
-- [Deployment](#deployment)
-  - [Step 4 — Deploy](#step-4--deploy)
+- [Short Response Questions](#short-response-questions)
+- [Code](#code)
+  - [Grading](#grading)
+  - [Server Side Code](#server-side-code)
+    - [Step 1 — Create an Endpoint and Controller](#step-1--create-an-endpoint-and-controller)
+    - [Step 2 — Create an Environment Variable for the API Key](#step-2--create-an-environment-variable-for-the-api-key)
+  - [Client Side Code](#client-side-code)
+    - [Step 3 — Update the Frontend Application](#step-3--update-the-frontend-application)
+  - [Deployment](#deployment)
+    - [Step 4 — Deploy](#step-4--deploy)
 
 ## Setup
 
@@ -28,34 +29,13 @@ After cloning your repository, make sure to run the following commands:
 git checkout -b draft
 ```
 
-### Starter Code
+## Short Response Questions
 
-In this repo, you are provided with two folders, `frontend/` and `server/`. Inside of `frontend/` is a "Giphy Search" vanilla JavaScript application and inside of `server/` is the code for a static web server that serves this application.
+Short response questions can be found in the `short-response.md` file. Write your responses directly in that file. Do not forget to complete this part of the assignment. 
 
-Install dependencies and start the server by running the following commands inside of the `server/` directory:
+## Code
 
-```sh
-# make sure to cd into server/
-npm i
-npm start
-```
-
-Visit [http://localhost:8080](http://localhost:8080) to see the application. As you can see, the frontend application tries to use the Giphy API to show trending gifs of the day, but it's not quite working — we get a 401 status code (unauthorized).
-
-Look into the code provided in `frontend/src/` and see why:
-- `main.js` — the entry point; handles the search form event and calls `getTrendingGifs` on load
-- `fetch-helpers.js` — contains `getTrendingGifs` and `getGifsBySearch`, which send fetch requests directly to the Giphy API
-- `dom-helpers.js` — handles rendering gifs and errors to the page
-
-The problem is in `fetch-helpers.js`: the `API_KEY` variable has no valid value. But we can't just paste in a real key here — this file is sent directly to every user's browser, which means anyone could read it and steal the key. Instead, we need to set up our server to perform this fetch request and have our frontend request that data from the server.
-
-In the end, this is the flow of data that we are looking for:
-
-![](img/express-api-middleman.svg)
-
-As a result, only the server will know the API key and the frontend (which is ultimately what our users will see) only interacts with our own server.
-
-## Grading
+### Grading
 
 Your grade on this assignment will be determined by the number of tasks you are able to complete. This assignment has 10 requirements:
 - 3 environment variable requirements
@@ -88,8 +68,8 @@ Before submitting, make sure that these tasks are completed!
 
 You got this!
 
-## Server Side
-### Step 1 — Create an Endpoint and Controller
+### Server Side Code
+#### Step 1 — Create an Endpoint and Controller
 
 > ✅ You will know that you've completed this step once you can send a request to [http://localhost:8080/api/gifs](http://localhost:8080/api/gifs) and get back the top trending gifs from the Giphy API. This can be done with, or without storing the API key in an environment variable (that is the next step).
 
@@ -111,7 +91,7 @@ Test this out by sending a GET request to `http://localhost:8080/api/gifs` using
 
 You should see the fetched gifs with no authorization errors!
 
-### Step 2 — Create an Environment Variable for the API Key
+#### Step 2 — Create an Environment Variable for the API Key
 
 > ✅ You will know that you've completed this step once you can push to your GitHub repository without including the `.env` file AND that your API key is not included in any of your repository's files.
 
@@ -126,8 +106,8 @@ Once you've completed these steps, go ahead and add, commit, and push your code.
 
 > When it comes time to deploy this project, you will be able to provide the server hosting service with environment variables that will be securely stored and hidden from the public but that your server will have access to.
 
-## Client Side
-### Step 3 — Update the Frontend Application
+### Client Side Code
+#### Step 3 — Update the Frontend Application
 
 > ✅ You will know that you've completed this step once you refresh the page at [http://localhost:8080](http://localhost:8080) and see trending gifs loading successfully.
 
@@ -145,9 +125,9 @@ Do the following:
 
 ![](./img/localhost-fetch.png)
 
-## Deployment
+### Deployment
 
-### Step 4 — Deploy
+#### Step 4 — Deploy
 
 > ✅ You will know that you've completed this step once your server is deployed and functional!
 
