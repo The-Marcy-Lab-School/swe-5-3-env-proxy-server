@@ -16,7 +16,7 @@ Why is it unsafe to make requests to a third-party API (like Giphy) directly fro
 
 ## Question 2:
 
-
+What is the proxy server strategy? How does it help avoid exposing API Keys in client-side code while still providing access to APIs that require keys?
 
 **Your answer here**:
 
