@@ -24,7 +24,7 @@ What is the proxy server strategy? How does it help avoid exposing API Keys in c
 
 ## Question 3:
 
-What is an environment variable, and why do we store API keys in a .env file instead of directly in source code? What role does .gitignore play in this setup, and what could go wrong if the .env file were accidentally committed to GitHub?
+What is an environment variable, and why do we store API keys in a .env file instead of directly in source code? What role does .gitignore play in this setup, and what could go wrong if the .env file were accidentally committed to GitHub? What should you do if an API key is compromised?
 
 **Your answer here**:
 
