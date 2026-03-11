@@ -18,6 +18,7 @@ Refer to the associated [GitBook Chapter (Environment Variables and Deployment)]
     - [Step 3 — Update the Frontend Application](#step-3--update-the-frontend-application)
   - [Deployment](#deployment)
     - [Step 4 — Deploy](#step-4--deploy)
+  - [Search Functionality](#search-functionality)
 
 ## Setup
 
@@ -134,3 +135,16 @@ Do the following:
 When you're done, push your code to github and [follow these steps to deploy using Render](https://marcylabschool.gitbook.io/marcy-lab-school-docs/projects/6-deploying-using-render). Make sure to add environment variables for your API key!
 
 Then, add the deployed link to the top of this README.
+
+### Search Functionality
+
+Now that your server is acting as a proxy for sending requests to the Giphy API, let's make the search functionality work.
+
+**Server-Application**:
+* Update your controller for the `GET /api/gifs` endpoint such that it can extract a query string `q` containing a search term.
+* If there is a search term query string present, the fetch url should be `https://api.giphy.com/v1/gifs/search?limit=3&rating=g&api_key=${API_KEY}&q=${searchTerm}`
+  * Notice that we're using the `/search` endpoint for the Giphy API, not the `/trending` endpoint
+* If there is NO search term present, the fetch url should be `https://api.giphy.com/v1/gifs/trending?limit=3&rating=g&api_key=${API_KEY}`
+
+**Client-Application**:
+* Rewrite the `getGifsBySearch` function in `frontend/src/fetch-helpers.js` so that it sends a request to `/api/gifs?q=${searchTerm}` instead of directly to the Giphy API.
